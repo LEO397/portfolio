@@ -1,6 +1,16 @@
-import { CssBaseline, Paper, Typography, Box, Grid } from "@mui/material";
+import {
+  CssBaseline,
+  Paper,
+  Typography,
+  Box,
+  Grid,
+  Link,
+  Button,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import vrcurve from "../../assets/vrcurve.svg";
+import linkedinlogo from "../../assets/linkedin-white-logo.svg";
+import instagramlogo from "../../assets/instagram-white-logo.svg";
 import "../css/curve.css";
 import "../css/downarrow.css";
 import SvgComponent from "../SvgComponent";
@@ -31,7 +41,7 @@ const Main = () => {
   const jsonData = [
     {
       id: 1,
-      jobTitle: "Co-Founder, Engineering Head",
+      jobTitle: "Founder, Engineering Head",
       from: "June 2022",
       to: "May 2024",
       description:
@@ -39,7 +49,7 @@ const Main = () => {
       company: "Studnerd",
       skills:
         "Django, Python, API design(Django Rest Framework), React JS, Git, Google Cloud Platform",
-      companySite: "www.studnerd.com/about-us",
+      companySite: "https://www.studnerd.com/about-us",
       location: "Pune, MH",
     },
     {
@@ -51,7 +61,7 @@ const Main = () => {
         " As a data analysis specialist, I developed and maintained code to deliver accurate insights, designing procedures to ingest and process raw sales data from various sources. I preprocessed data to enhance analysis capabilities and created integration plans for seamless product assimilation into clients' infrastructure. My expertise enabled clients to make informed strategic decisions, driving business growth and success.",
       company: "ZS Associates",
       skills: "SQL, Python, AWS",
-      companySite: "www.zs.com",
+      companySite: "https://www.zs.com",
       location: "Pune, MH",
     },
     {
@@ -63,7 +73,7 @@ const Main = () => {
         "As a Software Developer at Tripstack, I developed and maintained the backend API, adding new functionalities and specializing in airline integrations for flight search and booking. I seamlessly integrated features into the EFOE API, set up proxies to handle bots, and configured caching mechanisms to optimize performance and accuracy, ensuring efficient fare caching across all airlines and routes",
       company: "Tripstack",
       skills: "Dotnet, C#, Javascript",
-      companySite: "www.tripstack.com",
+      companySite: "https://www.tripstack.com",
       location: "Pune, MH",
     },
   ];
@@ -79,7 +89,7 @@ const Main = () => {
           display: "flex",
           flexDirection: "column",
           // justifyContent: "center",
-
+          backgroundColor: "",
           // backgroundImage: `url(${vrcurve})`,
           // backgroundSize: "cover",
           // backgroundPosition: "center",
@@ -238,7 +248,77 @@ const Main = () => {
               </Box>
             ))}
           </Box>
-          <Box sx={{ width: "100%", mt: "50px", textAlign: "center" }}>
+          <Box
+            sx={{
+              width: "100%",
+              mt: "50px",
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+              // textAlign: "center",
+              // backgroundColor: "pink",
+            }}
+          >
+            {/* <hr></hr> */}
+            {/* <br></br> */}
+            <Typography sx={{ fontFamily: "Berlin Sans", fontSize: "2rem" }}>
+              Contact
+            </Typography>
+            <Box
+              sx={{
+                // backgroundColor: "yellow",
+                display: "flex",
+                pt: "15px",
+                minWidth: "100px",
+                justifyContent: "space-around",
+              }}
+            >
+              <a
+                href="https://www.instagram.com/vaibhavdrathod/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                }}
+              >
+                <img
+                  src={instagramlogo}
+                  height="100%"
+                  // style={{ marginRight: "25px" }}
+                  alt="Youtube Logo"
+                />{" "}
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vaibhav-rathod-b801b0145/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                }}
+              >
+                <img
+                  src={linkedinlogo}
+                  height="100%"
+                  // style={{ marginRight: "15px" }}
+                  alt="Youtube Logo"
+                />
+              </a>
+              {/* <img
+              src={youtubeLogo}
+              height="100%"
+              style={{ marginRight: "15px" }}
+              alt="Youtube Logo"
+            /> */}
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              mt: "50px",
+              textAlign: "center",
+            }}
+          >
+            {/* <hr></hr> */}
             <br></br>
             <Typography
               sx={{
@@ -267,14 +347,23 @@ const Main = () => {
                 justifyContent: "center",
               }}
             >
-              <Box
+              {/* <Link target="_blank" to="https://github.com/LEO397/portfolio"> */}
+              <Button
+                target="_blank"
+                href="https://github.com/LEO397/portfolio"
                 sx={{
+                  borderRadius: "0px",
                   border: "2px solid black",
                   p: "10px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   boxShadow: "5px 5px 1px rgba(102, 204, 255, 1)",
+                  textTransform: "none",
+                  ":hover": {
+                    boxShadow: "none",
+                    backgroundColor: "#B8E7FF",
+                  },
                 }}
               >
                 <Typography
@@ -282,12 +371,14 @@ const Main = () => {
                     fontFamily: "montserrat",
                     fontSize: "1rem",
                     fontWeight: "light",
+                    color: "black",
                   }}
                 >
                   This Repo is Open Source&nbsp;&nbsp;
                 </Typography>
                 <img src={githublogo} width="40px" height={"40px"} />
-              </Box>
+              </Button>
+              {/* </Link> */}
             </Box>
 
             <br></br>
