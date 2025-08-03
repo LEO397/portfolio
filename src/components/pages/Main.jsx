@@ -18,9 +18,22 @@ import SvgComponent from "../SvgComponent";
 import displaypic from "../../assets/homeimg.png";
 import ProjectCards from "../ProjectCards";
 import githublogo from "../../assets/github-mark.svg";
+import consoleimg from "../../assets/consoleimg.jpg";
 
 const Main = () => {
   const [isArrowVisible, setIsArrowVisible] = useState(true);
+
+useEffect(() => {
+  // console.log('%c ', `
+  //   background-image: url(${consoleimg});
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   padding: 150px;
+  // `);
+  
+  // Optional: Add a welcome message
+  console.log('%cI am watching you -_-', 'font-size: 24px; color: #66ccff;');
+}, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,17 +54,17 @@ const Main = () => {
   const jsonData = [
     {
       id: 1,
-      jobTitle: "Founder, Engineering Head",
-      from: "June 2022",
-      to: "May 2024",
+      jobTitle: "Software Developer",
+      from: "June 2019",
+      to: "May 2021",
       description:
-        " As a co-founder, my journey has been of multiple responsibilities, where I’ve had the privilege of steering the course of my venture across various domains. I managed system architecture, UI/UX, frontend, backend, database, and deployment, alongside market research and marketing. Following software development principles, I emphasized learning, testing, and iterative improvement to drive growth and strategy. This involved not only conceptualizing the structure but also focus on the intricate details of its implementation ",
-      company: "Studnerd",
-      skills:
-        "Django, Python, API design(Django Rest Framework), React JS, Git, Google Cloud Platform",
-      companySite: "https://www.studnerd.com/about-us",
+        "As a Software Developer at Tripstack, I developed and maintained the backend API, adding new functionalities and specializing in airline integrations for flight search and booking. I seamlessly integrated features into the EFOE API, set up proxies to handle bots, and configured caching mechanisms to optimize performance and accuracy, ensuring efficient fare caching across all airlines and routes",
+      company: "Tripstack",
+      skills: "Dotnet, C#, Javascript",
+      companySite: "https://www.tripstack.com",
       location: "Pune, MH",
     },
+   
     {
       id: 2,
       jobTitle: "Business Technology Solutions Associate",
@@ -66,16 +79,31 @@ const Main = () => {
     },
     {
       id: 3,
-      jobTitle: "Software Developer",
-      from: "June 2019",
-      to: "May 2021",
+      jobTitle: "Founder, Engineering Head",
+      from: "June 2022",
+      to: "May 2024",
       description:
-        "As a Software Developer at Tripstack, I developed and maintained the backend API, adding new functionalities and specializing in airline integrations for flight search and booking. I seamlessly integrated features into the EFOE API, set up proxies to handle bots, and configured caching mechanisms to optimize performance and accuracy, ensuring efficient fare caching across all airlines and routes",
-      company: "Tripstack",
-      skills: "Dotnet, C#, Javascript",
-      companySite: "https://www.tripstack.com",
+        " As a co-founder, my journey has been of multiple responsibilities, where I’ve had the privilege of steering the course of my venture across various domains. I managed system architecture, UI/UX, frontend, backend, database, and deployment, alongside market research and marketing. Following software development principles, I emphasized learning, testing, and iterative improvement to drive growth and strategy. This involved not only conceptualizing the structure but also focus on the intricate details of its implementation ",
+      company: "Studnerd",
+      skills:
+        "Django, Python, API design(Django Rest Framework), React JS, Git, Google Cloud Platform",
+      companySite: "https://www.studnerd.com/about-us",
       location: "Pune, MH",
     },
+    {
+      id: 4,
+      jobTitle: "Senior Software Engineer",
+      from: "June 2024",
+      to: "Present",
+      description:"I am working as full stack developer at Searce, where I am working on multiple projects using MERN stack as well as some other technologies like Django, Python, PostgreSQL, etc.",
+
+      company: "Searce",
+      skills:
+        "Django, Python, API design(Django Rest Framework), React JS, Git, Google Cloud Platform, MongoDB, PostgreSQL",
+      companySite: "https://www.searce.com/",
+      location: "Pune, MH",
+    }
+  
   ];
 
   return (
@@ -242,7 +270,12 @@ const Main = () => {
               flexDirection: "column",
             }}
           >
-            {jsonData.map((data) => (
+            {/* {jsonData.map((data) => (
+              <Box sx={{ my: "10px", width: "100%" }}>
+                <ProjectCards key={data.id} {...data} />
+              </Box>
+            ))} */}
+            {[...jsonData].reverse().map((data) => (
               <Box sx={{ my: "10px", width: "100%" }}>
                 <ProjectCards key={data.id} {...data} />
               </Box>
